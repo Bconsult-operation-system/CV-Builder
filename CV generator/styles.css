@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 20px auto;
     background: white;
     padding: 20px;
@@ -25,8 +25,9 @@ form {
 .row {
     display: flex;
     margin-bottom: 10px;
-}
+    padding-right: 10px;
 
+}
 .column {
     flex: 1;
     padding: 10px;
@@ -39,6 +40,7 @@ form {
 
 label {
     margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -102,4 +104,86 @@ legend {
 
 .remove-button:hover {
     color: darkred;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+.cv-preview {
+    display: flex;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cv-preview .sidebar {
+    width: 30%;
+    background-color: #f26b3a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.cv-preview .sidebar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.cv-preview .sidebar .personal-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.cv-preview .sidebar .personal-info h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.cv-preview .sidebar .personal-info h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.cv-preview .sidebar .personal-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.cv-preview .main-content {
+    width: 70%;
+    padding: 20px;
+}
+
+.cv-preview .main-content h3 {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    border-bottom: 2px solid #f26b3a;
+    padding-bottom: 5px;
+}
+
+.cv-preview .main-content p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.cv-preview .main-content div {
+    text-align: center;
+    margin: 10px 0;
 }
