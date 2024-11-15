@@ -51,7 +51,8 @@ function updatePreview() {
     for (let i = 0; i < projectsContainer.children.length; i++) {
         const name = projectsContainer.children[i].querySelector('.projectTitle').value;
         const description = projectsContainer.children[i].querySelector('.projectDescription').value;
-        previewProjects.innerHTML += `<h3>${name}</h3><p>${description}</p>`;
+        const projectLink = projectsContainer.children[i].querySelector('.projectLink').value;
+        previewProjects.innerHTML += `<h3>${name}</h3><p>${description}</p><p>${projectLink}</p>`;
     }
     
     const skillsContainer = document.getElementById('skillsContainer');
