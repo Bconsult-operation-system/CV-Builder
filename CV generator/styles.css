@@ -73,6 +73,7 @@ button:hover {
     padding: 20px;
     margin-bottom: 20px;
 }
+ 
 
 legend {
     font-weight: bold;
@@ -171,8 +172,6 @@ body {
     text-align: right;
     margin-bottom: 10px;
     font-size: 20px;
-    color: #333;
-    border-bottom: 2px solid #f26b3a;
     padding-bottom: 5px;
 }
 
@@ -186,4 +185,67 @@ body {
 .cv-preview .main-content div {
     text-align: center;
     margin: 10px 0;
+}
+/* Base Styles */
+.work-history-entry .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-history-entry .column {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.work-history-entry .column:last-child {
+    margin-right: 0;
+}
+
+/* Base Styles */
+.work-history-entry .row,
+.personal-info .row,
+.education .row,
+.projects .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-history-entry .column,
+.personal-info .column,
+.education .column,
+.projects .column {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.work-history-entry .column:last-child,
+.personal-info .column:last-child,
+.education .column:last-child,
+.projects .column:last-child {
+    margin-right: 0;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .work-history-entry .row,
+    .personal-info .row,
+    .education .row,
+    .projects .row {
+        flex-direction: row; /* Change to row on mobile */
+    }
+    .work-history-entry .column,
+    .personal-info .column,
+    .education .column,
+    .projects .column {
+        flex: 50%; /* Two columns */
+    }
+    .work-history-entry .column:last-child,
+    .personal-info .column:last-child,
+    .education .column:last-child,
+    .projects .column:last-child {
+        flex: 100%; /* Full width for the last column */
+    }
 }

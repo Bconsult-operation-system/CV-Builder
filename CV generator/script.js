@@ -2,74 +2,74 @@ function updatePreview() {
     const firstName = document.getElementById('firstName').value;
     const middleName = document.getElementById('middleName').value;
     const lastName = document.getElementById('lastName').value;
-    
+   
     document.getElementById('previewName').innerText = `${firstName} ${middleName} ${lastName}`;
     document.getElementById('previewDesignation').innerText = document.getElementById('designation').value;
     document.getElementById('previewAddress').innerText = document.getElementById('address').value;
     document.getElementById('previewEmail').innerText = document.getElementById('email').value;
     document.getElementById('previewPhone').innerText = document.getElementById('phone').value;
     document.getElementById('previewSummary').innerText = document.getElementById('summary').value;
-    
+   
     const workExperienceContainer = document.getElementById('workExperienceContainer');
     const previewWorkExperience = document.getElementById('previewWorkExperience');
     previewWorkExperience.innerHTML = '';
     for (let i = 0; i < workExperienceContainer.children.length; i++) {
-        const title = workExperienceContainer.children[i].querySelector('.workTitle').value;
-        const description = workExperienceContainer.children[i].querySelector('.workDescription').value;
+        const title = workExperienceContainer.children[i].querySelector('.workTitle')?.value || '';
+        const description = workExperienceContainer.children[i].querySelector('.workDescription')?.value || '';
         previewWorkExperience.innerHTML += `<h3>${title}</h3><p>${description}</p>`;
     }
-    
+   
     const workHistoryContainer = document.getElementById('workHistoryContainer');
     const previewWorkHistory = document.getElementById('previewWorkHistory');
     previewWorkHistory.innerHTML = '';
     for (let i = 0; i < workHistoryContainer.children.length; i++) {
-        const title = workHistoryContainer.children[i].querySelector('.workHistoryTitle').value;
-        const company = workHistoryContainer.children[i].querySelector('.workHistoryCompany').value;
-        const location = workHistoryContainer.children[i].querySelector('.workHistoryLocation').value;
-        const startDate = workHistoryContainer.children[i].querySelector('.workHistoryStartDate').value;
-        const endDate = workHistoryContainer.children[i].querySelector('.workHistoryEndDate').value;
-        const description = workHistoryContainer.children[i].querySelector('.workHistoryDescription').value;
+        const title = workHistoryContainer.children[i].querySelector('.workHistoryTitle')?.value || '';
+        const company = workHistoryContainer.children[i].querySelector('.workHistoryCompany')?.value || '';
+        const location = workHistoryContainer.children[i].querySelector('.workHistoryLocation')?.value || '';
+        const startDate = workHistoryContainer.children[i].querySelector('.workHistoryStartDate')?.value || '';
+        const endDate = workHistoryContainer.children[i].querySelector('.workHistoryEndDate')?.value || '';
+        const description = workHistoryContainer.children[i].querySelector('.workHistoryDescription')?.value || '';
         previewWorkHistory.innerHTML += `<h3>${title}</h3><p>${company}, ${location}</p><p>${startDate} - ${endDate}</p><p>${description}</p>`;
     }
-
+ 
     const educationContainer = document.getElementById('educationContainer');
     const previewEducation = document.getElementById('previewEducation');
     previewEducation.innerHTML = '';
     for (let i = 0; i < educationContainer.children.length; i++) {
-        const school = educationContainer.children[i].querySelector('.educationSchool').value;
-        const qualification = educationContainer.children[i].querySelector('.educationQualification').value;
-        const city = educationContainer.children[i].querySelector('.educationCity').value;
-        const startDate = educationContainer.children[i].querySelector('.educationStartDate').value;
-        const endDate = educationContainer.children[i].querySelector('.educationEndDate').value;
-        const description = educationContainer.children[i].querySelector('.educationDescription').value;
+        const school = educationContainer.children[i].querySelector('.educationSchool')?.value || '';
+        const qualification = educationContainer.children[i].querySelector('.educationQualification')?.value || '';
+        const city = educationContainer.children[i].querySelector('.educationCity')?.value || '';
+        const startDate = educationContainer.children[i].querySelector('.educationStartDate')?.value || '';
+        const endDate = educationContainer.children[i].querySelector('.educationEndDate')?.value || '';
+        const description = educationContainer.children[i].querySelector('.educationDescription')?.value || '';
         previewEducation.innerHTML += `<h3>${school}</h3><p>${qualification}, ${city}</p><p>${startDate} - ${endDate}</p><p>${description}</p>`;
     }
-    
+   
     const projectsContainer = document.getElementById('projectsContainer');
     const previewProjects = document.getElementById('previewProjects');
     previewProjects.innerHTML = '';
     for (let i = 0; i < projectsContainer.children.length; i++) {
-        const name = projectsContainer.children[i].querySelector('.projectTitle').value;
-        const description = projectsContainer.children[i].querySelector('.projectDescription').value;
-        const projectLink = projectsContainer.children[i].querySelector('.projectLink').value;
+        const name = projectsContainer.children[i].querySelector('.projectTitle')?.value || '';
+        const description = projectsContainer.children[i].querySelector('.projectDescription')?.value || '';
+        const projectLink = projectsContainer.children[i].querySelector('.projectLink')?.value || '';
         previewProjects.innerHTML += `<h3>${name}</h3><p>${description}</p><p>${projectLink}</p>`;
     }
-    
+   
     const skillsContainer = document.getElementById('skillsContainer');
     const previewSkills = document.getElementById('previewSkills');
     previewSkills.innerHTML = '';
     for (let i = 0; i < skillsContainer.children.length; i++) {
-        const skill = skillsContainer.children[i].querySelector('.skillName').value;
+        const skill = skillsContainer.children[i].querySelector('.skillName')?.value || '';
         previewSkills.innerHTML += `<p>${skill}</p>`;
     }
 }
-
+ 
 function loadImage(event) {
     const image = document.getElementById('previewImage');
     image.src = URL.createObjectURL(event.target.files[0]);
     image.style.display = 'block';
 }
-
+ 
 function addWorkExperience() {
     const workExperienceContainer = document.getElementById('workExperienceContainer');
     const workExperienceDiv = document.createElement('div');
@@ -86,12 +86,12 @@ function addWorkExperience() {
     `;
     workExperienceContainer.appendChild(workExperienceDiv);
 }
-
+ 
 function removeWorkExperience(button) {
     button.parentElement.remove();
     updatePreview();
 }
-
+ 
 function addWorkHistory() {
     const workHistoryContainer = document.getElementById('workHistoryContainer');
     const workHistoryDiv = document.createElement('div');
@@ -132,12 +132,12 @@ function addWorkHistory() {
     `;
     workHistoryContainer.appendChild(workHistoryDiv);
 }
-
+ 
 function removeWorkHistory(button) {
     button.parentElement.remove();
     updatePreview();
 }
-
+ 
 function addEducation() {
     const educationContainer = document.getElementById('educationContainer');
     const educationDiv = document.createElement('div');
@@ -178,16 +178,16 @@ function addEducation() {
     `;
     educationContainer.appendChild(educationDiv);
 }
-
+ 
 function removeEducation(button) {
     button.parentElement.remove();
     updatePreview();
 }
-
+ 
 function generateCV() {
     document.getElementById('cvPreview').style.display = 'block';
 }
-
+ 
 function downloadCV() {
     const element = document.getElementById('cvPreview');
     const options = {
@@ -197,10 +197,10 @@ function downloadCV() {
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
-
+ 
     html2pdf().set(options).from(element).save();
 }
-
+ 
 function addSkill() {
     const skillsContainer = document.getElementById('skillsContainer');
     const skillDiv = document.createElement('div');
@@ -215,12 +215,12 @@ function addSkill() {
     `;
     skillsContainer.appendChild(skillDiv);
 }
-
+ 
 function removeSkill(button) {
     button.parentElement.remove();
     updatePreview();
 }
-
+ 
 function addProject() {
     const projectsContainer = document.getElementById('projectsContainer');
     const projectDiv = document.createElement('div');
@@ -230,6 +230,8 @@ function addProject() {
 <input type="text" class="projectTitle" oninput="updatePreview()">
 <label>Description:</label>
 <textarea class="projectDescription" oninput="updatePreview()"></textarea>
+<label>Project Link:</label>
+<input type="text" class="projectLink" oninput="updatePreview()">
 <button type="button" class="remove-button" onclick="removeProject(this)">
             🗑️
 </button>
@@ -237,12 +239,12 @@ function addProject() {
     `;
     projectsContainer.appendChild(projectDiv);
 }
-
+ 
 function removeProject(button) {
     button.parentElement.remove();
     updatePreview();
 }
-
+ 
 // Initialize with one work experience, one work history, and one education entry
 addWorkExperience();
 addWorkHistory();
