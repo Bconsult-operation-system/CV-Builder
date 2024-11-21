@@ -1,4 +1,3 @@
-<<<<<<< HEAD:CV generator/script.js
 function updatePreview() {
     const firstName = document.getElementById('firstName').value;
     const middleName = document.getElementById('middleName').value;
