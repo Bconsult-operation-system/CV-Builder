@@ -249,7 +249,7 @@ body {
         flex: 100%; /* Full width for the last column */
     }
 }
-=======
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -447,4 +447,4 @@ body {
 .image{
     margin-bottom: 10px ;
 }
->>>>>>> b324f86ea2b7dae14926fe073234faaadc020c9f:styles.css
+
