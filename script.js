@@ -9,6 +9,12 @@ function updatePreview() {
     document.getElementById('previewEmail').innerText = document.getElementById('email').value;
     document.getElementById('previewPhone').innerText = document.getElementById('phone').value;
     document.getElementById('previewSummary').innerText = document.getElementById('summary').value;
+
+    // Handle dropdown fields
+    document.getElementById('previewGender').innerText = document.getElementById('gender').value;
+    document.getElementById('previewRace').innerText = document.getElementById('race').value;
+    document.getElementById('previewNationality').innerText = document.getElementById('nationality').value;
+    document.getElementById('previewDrivers').innerText = document.getElementById('drivers').value;
    
     const workExperienceContainer = document.getElementById('workExperienceContainer');
     const previewWorkExperience = document.getElementById('previewWorkExperience');
@@ -63,12 +69,21 @@ function updatePreview() {
         previewSkills.innerHTML += `<p>${skill}</p>`;
     }
 }
- 
+
+// Function to load the image
 function loadImage(event) {
-    const image = document.getElementById('previewImage');
-    image.src = URL.createObjectURL(event.target.files[0]);
-    image.style.display = 'block';
+    const image = document.getElementById('image').files[0];
+    const reader = new FileReader();
+    reader.onload = function() {
+        const previewContainer = document.querySelector('.cv-preview .sidebar img');
+        previewContainer.src = reader.result;
+    };
+    reader.readAsDataURL(image);
 }
+
+// Call updatePreview on page load to initialize the preview
+document.addEventListener('DOMContentLoaded', updatePreview);
+
  
 function addWorkExperience() {
     const workExperienceContainer = document.getElementById('workExperienceContainer');
