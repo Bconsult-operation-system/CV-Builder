@@ -2,7 +2,7 @@ function updatePreview() {
     const firstName = document.getElementById('firstName').value;
     const middleName = document.getElementById('middleName').value;
     const lastName = document.getElementById('lastName').value;
-   
+
     document.getElementById('previewName').innerText = `${firstName} ${middleName} ${lastName}`;
     document.getElementById('previewDesignation').innerText = document.getElementById('designation').value;
     document.getElementById('previewAddress').innerText = document.getElementById('address').value;
@@ -15,7 +15,7 @@ function updatePreview() {
     document.getElementById('previewRace').innerText = document.getElementById('race').value;
     document.getElementById('previewNationality').innerText = document.getElementById('nationality').value;
     document.getElementById('previewDrivers').innerText = document.getElementById('drivers').value;
-   
+
     const workExperienceContainer = document.getElementById('workExperienceContainer');
     const previewWorkExperience = document.getElementById('previewWorkExperience');
     previewWorkExperience.innerHTML = '';
@@ -24,7 +24,7 @@ function updatePreview() {
         const description = workExperienceContainer.children[i].querySelector('.workDescription')?.value || '';
         previewWorkExperience.innerHTML += `<h3>${title}</h3><p>${description}</p>`;
     }
-   
+
     const workHistoryContainer = document.getElementById('workHistoryContainer');
     const previewWorkHistory = document.getElementById('previewWorkHistory');
     previewWorkHistory.innerHTML = '';
@@ -34,10 +34,10 @@ function updatePreview() {
         const location = workHistoryContainer.children[i].querySelector('.workHistoryLocation')?.value || '';
         const startDate = workHistoryContainer.children[i].querySelector('.workHistoryStartDate')?.value || '';
         const endDate = workHistoryContainer.children[i].querySelector('.workHistoryEndDate')?.value || '';
-        const description = workHistoryContainer.children[i].querySelector('.workHistoryDescription')?.value || '';
-        previewWorkHistory.innerHTML += `<h3>${title}</h3><p>${company}, ${location}</p><p>${startDate} - ${endDate}</p><p>${description}</p>`;
+        const duties = workHistoryContainer.children[i].querySelector('.workHistoryDescription')?.value || '';
+        previewWorkHistory.innerHTML += `<h3>${title}</h3><p>${company}, ${location}</p><p>${startDate} - ${endDate}</p><p><strong>Duties and Responsibilities:</strong> ${duties}</p>`;
     }
- 
+
     const educationContainer = document.getElementById('educationContainer');
     const previewEducation = document.getElementById('previewEducation');
     previewEducation.innerHTML = '';
@@ -50,7 +50,7 @@ function updatePreview() {
         const description = educationContainer.children[i].querySelector('.educationDescription')?.value || '';
         previewEducation.innerHTML += `<h3>${school}</h3><p>${qualification}, ${city}</p><p>${startDate} - ${endDate}</p><p>${description}</p>`;
     }
-   
+
     const projectsContainer = document.getElementById('projectsContainer');
     const previewProjects = document.getElementById('previewProjects');
     previewProjects.innerHTML = '';
@@ -58,9 +58,9 @@ function updatePreview() {
         const name = projectsContainer.children[i].querySelector('.projectTitle')?.value || '';
         const description = projectsContainer.children[i].querySelector('.projectDescription')?.value || '';
         const projectLink = projectsContainer.children[i].querySelector('.projectLink')?.value || '';
-        previewProjects.innerHTML += `<h3>${name}</h3><p>${description}</p><p>${projectLink}</p>`;
+        previewProjects.innerHTML += `<h3>${name}</h3><p>${description}</p><p><a href="${projectLink}" target="_blank">${projectLink}</a></p>`;
     }
-   
+
     const skillsContainer = document.getElementById('skillsContainer');
     const previewSkills = document.getElementById('previewSkills');
     previewSkills.innerHTML = '';
@@ -83,6 +83,7 @@ function loadImage(event) {
 
 // Call updatePreview on page load to initialize the preview
 document.addEventListener('DOMContentLoaded', updatePreview);
+
 
  
 function addWorkExperience() {
