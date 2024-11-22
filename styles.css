@@ -447,4 +447,69 @@ body {
 .image{
     margin-bottom: 10px ;
 }
+/* Default styles for the form */
+.row.drop-down {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
+  }
+  
+  .column.cols {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .column.cols label {
+    margin-bottom: 5px;
+  }
+  
+  .column.cols select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #f26b3a;
+    color: #ffff;
+
+  }
+  
+  /* Hover styles for dropdown options */
+  .column.cols select option:hover,
+  .column.cols select option:focus {
+    background-color: #f26b3a;
+    color: #fff;
+  }
+  
+  /* Ensuring equal gaps and spacing */
+  .column.cols label + select {
+    margin-top: 10px;
+  }
+  
+  /* Center the content */
+  .column.cols {
+    text-align: center;
+  }
+  
+  /* Media query for mobile devices to stack columns vertically */
+  @media (max-width: 600px) {
+    .row.drop-down {
+      flex-direction: column;
+    }
+    .label {
+    align-items: right ;
+    }
+  
+    .column.cols {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .column.cols select {
+      text-align: left;
+    }
+  }
+  
